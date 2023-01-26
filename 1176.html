@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const T = parseInt(prompt('Digite o numero de casos.'))
+        let vetor = [0, 1, 1]
+        for (let i = 0; i < T; i++) {
+            let N = parseInt(prompt('Digite qual o termo da série de Fibonacci desejado.'))
+            for (let cont = 0; cont <= N; cont++) {
+                if (N == 0) {
+                    console.log(`Fib (${N}) = 0`)
+                    cont += N +3
+                }
+                if (N == 1 || N == 2) {
+                    console.log(`Fib (${N}) = 1`)
+                    cont += N +3
+                }
+                if (cont == N) {
+                    vetor[cont] = vetor[cont - 1] + vetor[cont - 2]
+                    console.log(`Fib (${N}) = ${vetor[cont]}`)
+                }
+                if (cont > 2) {
+                    vetor[cont] = vetor[cont - 1] + vetor[cont - 2]
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

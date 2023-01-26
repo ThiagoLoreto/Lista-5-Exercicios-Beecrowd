@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const N = parseInt(prompt('Digite o numero de jogadores'))
+        let jogadasFeitas = []
+        let jogadasSucesso = []
+        let saq = 0
+        let bloq = 0
+        let ataq = 0
+        let saqSuc = 0
+        let bloqSuc = 0
+        let ataqSuc = 0
+
+        for(let i = 0; i < N; i++) {
+            const X = prompt('Digite o nome do jogador')
+            const [S, B, A] = prompt('Digite os valores').split(' ').map(Number)
+            jogadasFeitas.push({nome: X, saques: S, bloqueios: B, ataques: A})
+            saq += jogadasFeitas[i].saques
+            bloq += jogadasFeitas[i].bloqueios
+            ataq += jogadasFeitas[i].ataques
+            
+            const [S2, B2, A2] = prompt('Digite os valores').split(' ').map(Number)
+            jogadasSucesso.push({nome: X, saques: S2, bloqueios: B2, ataques: A2})
+            saqSuc += jogadasSucesso[i].saques
+            bloqSuc += jogadasSucesso[i].bloqueios
+            ataqSuc += jogadasSucesso[i].ataques
+        }
+        const saquesFinal = (saqSuc / saq) * 100
+        const bloqueiosFinal = (bloqSuc / bloq) * 100
+        const ataqueFinal = (ataqSuc / ataq) * 100
+
+        console.log(`Pontos de Saque: ${saquesFinal.toFixed(2)} %.`)
+        console.log(`Pontos de BLoqueio: ${bloqueiosFinal.toFixed(2)} %.`)
+        console.log(`Pontos de Ataque: ${ataqueFinal.toFixed(2)} %.`)
+
+
+        
+    </script>
+</body>
+</html>

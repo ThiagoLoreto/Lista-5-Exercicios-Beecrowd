@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let X = Number(prompt('Digite um valor.'))
+        X = X.toFixed(4)
+        const vetor = [X]
+        
+        for(let i = 0; i <= 99; i++) {
+            const novoIndice = vetor[i] / 2
+            vetor.push(novoIndice.toFixed(4))
+            console.log(`N [${i}] = ${vetor[i]}`)
+        }
+
+    </script>
+</body>
+</html>
